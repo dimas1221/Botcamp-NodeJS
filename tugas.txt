@@ -1,0 +1,2 @@
+bikin fungsi menambah objek 1 dan 2
+when objek 2 di eksekusi setelah objek 1 di tambah

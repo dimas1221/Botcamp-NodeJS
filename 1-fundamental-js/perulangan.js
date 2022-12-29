@@ -141,27 +141,27 @@
 //   console.log(diagonal(5))
 
 
-const diagonal = (n) => {
-    let str = ''
-    let hashtag = '#'
-    let star = '*'
-    for (let i = 1; i <= n; i++) {
-      for (let j = 1; j <= n; j++) {
-        if (i == j) {
-          str += star
-        } else {
-          str += ' '
-        }
-        if (j == (n - i+1)) {
-          str += hashtag
-        }
-      }
-      str += '\n'
-    }
-    return str
-  }
+// const diagonal = (n) => {
+//     let str = ''
+//     let hashtag = '#'
+//     let star = '*'
+//     for (let i = 1; i <= n; i++) {
+//       for (let j = 1; j <= n; j++) {
+//         if (i == j) {
+//           str += star
+//         } else {
+//           str += ' '
+//         }
+//         if (j == (n - i+1)) {
+//           str += hashtag
+//         }
+//       }
+//       str += '\n'
+//     }
+//     return str
+//   }
   
-  console.log(diagonal(8))
+//   console.log(diagonal(8))
 
 // const diagonal = (n) => {
 //     let str = ''
@@ -253,5 +253,18 @@ const diagonal = (n) => {
 // }else{
 //   console.log ("Masukkan Rentang Angka 1 - 26")
 // }
+
+let str =''
+let s = '*'
+let h ='#'
+let n =8
+
+for (let i = 1; i <=n; i++) {
+  for (let j = 1; j <=n; j++) {
+    
+    
+  }
+  str=''
+}
 
 
