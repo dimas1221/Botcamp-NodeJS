@@ -13,10 +13,10 @@ str = str + "a"
 
 console.log(str)
 
+
 let a = "god morning";
 console.log(a.length)
 console.log(a.substring(0,4));
-
 
 let b = "hello";
 console.log(b[b.length -1]);

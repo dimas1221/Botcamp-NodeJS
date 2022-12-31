@@ -43,7 +43,7 @@ function insertContact(){
     contact2.noHp ='234' 
     contact2.alamat='bdsdsf'
 
-    objectContact.push(contact1, contact2)
+    objectContact.push(contact1, contact2 )
     setTimeout(()=>{
         resolve(objectContact)
     },1000)

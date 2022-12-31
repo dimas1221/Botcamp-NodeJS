@@ -17,3 +17,5 @@ function getTotal(...numbers: number[]): number {
     return total
 }
 console.log(getTotal(10,20,9))
+
+// function tambah_gen(a:any)
