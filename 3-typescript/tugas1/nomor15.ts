@@ -5,7 +5,7 @@ function totalGaji(g1:any,g2:any,g3:any){
     let tot = p1+p2+p3
     return `total gaji yg harus dibayar
     \nEmp1 : ${g1} + pajak(2%) = Rp.${p1}
-    \nEmp2 : ${g2} + pajak(5%) = Rp.${p2}
+    \nEmp2 : ${g2} + pajak(5%) = Rp.${p2} 
     \nEmp3 : ${g3} + pajak(10%) = Rp.${p3}
     \nTotal : Rp.${tot}`
 }
