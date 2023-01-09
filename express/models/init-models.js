@@ -1,4 +1,5 @@
 import { Sequelize } from "sequelize";
+// conection pool
 const sequelize = new Sequelize(
   process.env.DATABASE,
   process.env.DATABASE_USER,
@@ -23,9 +24,9 @@ var _orders_detail = require("./orders_detail");
 var _products = require("./products");
 var _shippers = require("./shippers");
 var _suppliers = require("./suppliers");
+var _users = require("./users");
 
-// ubah ke arrow function
-const initModels =(sequelize)=>{
+function initModels(sequelize) {
   var categories = _categories(sequelize, DataTypes);
   var customers = _customers(sequelize, DataTypes);
   var employees = _employees(sequelize, DataTypes);
@@ -34,6 +35,7 @@ const initModels =(sequelize)=>{
   var products = _products(sequelize, DataTypes);
   var shippers = _shippers(sequelize, DataTypes);
   var suppliers = _suppliers(sequelize, DataTypes);
+  var users = _users(sequelize, DataTypes);
 
   orders.belongsToMany(products, { as: 'ordet_prod_id_products', through: orders_detail, foreignKey: "ordet_order_id", otherKey: "ordet_prod_id" });
   products.belongsToMany(orders, { as: 'ordet_order_id_orders', through: orders_detail, foreignKey: "ordet_prod_id", otherKey: "ordet_order_id" });
@@ -59,9 +61,9 @@ const initModels =(sequelize)=>{
     products,
     shippers,
     suppliers,
+    users,
   };
 }
-
 // module.exports = initModels;
 // module.exports.initModels = initModels;
 // module.exports.default = initModels;

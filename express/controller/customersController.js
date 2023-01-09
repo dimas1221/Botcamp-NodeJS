@@ -1,5 +1,6 @@
 import { where } from "sequelize";
-import { Sequelize, sequelize } from "../models/init-models";
+import models,{ Sequelize, sequelize } from "../models/init-models";
+
 
 const findAllCustomers=async (req, res)=>{
     const result = await sequelize.query('select * from customers',{
@@ -11,7 +12,7 @@ const findAllCustomers=async (req, res)=>{
 }
 
 const findAllRows = async (req,res)=>{
-    const result = await req.context.models.customers.findAll()
+    const result = await models.customers.findAll()
 
     return res.send(result)
 }
@@ -23,15 +24,22 @@ const findById = async (req, res)=>{
 }
 // Insert
 const CreateCustomers= async (req, res)=>{
-    const result = await req.context.models.customers.create({
+   await req.context.models.customers.create({
         cust_id:req.body.cust_id,
         cust_name:req.body.cust_name,
         cust_city:req.body.cust_city,
     })
-    return res.send(result)
+    // untuk menangkap eror
+    .then(result=>{
+        return res.send('berhasil\n'+ result)
+    }).catch(err=>{
+        return res.send('gagal\n'+ err)
+    })
 }
 
 const UpdateCustmers = async (req,res)=>{
+
+
     const result =await req.context.models.customers.update({
         cust_name:req.body.cust_name,
         cust_city:req.body.cust_city
@@ -40,6 +48,8 @@ const UpdateCustmers = async (req,res)=>{
         where:{cust_id:req.params.id}
     })
     return res.send(result)
+
+
 }
 
 const DeleteCustomers = async (req, res)=>{
