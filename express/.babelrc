@@ -1,13 +1,30 @@
+// {
+//     "presets": [
+//         "@babel/preset-env"
+//     ],
+//     "plugins": [
+//      [
+//         "@babel/plugin-transform-runtime",
+//         {
+//             "renerator":true
+//         }
+//      ]
+//     ]
+// }
 {
     "presets": [
-        "@babel/preset-env"
-    ],
-    "plugins": [
-     [
-        "@babel/plugin-transform-runtime",
+      [
+        "@babel/preset-env",
         {
-            "renerator":true
+          "targets": {
+            "edge": "17",
+            "firefox": "60",
+            "chrome": "67",
+            "safari": "11.1"
+          },
+          "useBuiltIns": "usage",
+          "corejs": "3.6.5"
         }
-     ]
+      ]
     ]
-}
+  }

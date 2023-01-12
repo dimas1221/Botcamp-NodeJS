@@ -23,8 +23,7 @@ app.use(async(req,res, next)=>{
 // memanggil router
 app.use(router)
 
-
-const dropDatabaseSync = false
+ const dropDatabaseSync = false
 sequelize.sync({force:dropDatabaseSync}).then(()=>{
     if(dropDatabaseSync){
         console.log("database do not drop")

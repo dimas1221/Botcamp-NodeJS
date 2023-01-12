@@ -1,3 +1,4 @@
+
 import { Sequelize } from "sequelize";
 // conection pool
 const sequelize = new Sequelize(

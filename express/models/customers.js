@@ -1,10 +1,12 @@
+
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('customers', {
     cust_id: {
       type: DataTypes.CHAR(100),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+
     },
     cust_name: {
       type: DataTypes.STRING(40),
@@ -14,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(15),
       allowNull: true
     }
-  }, {
+  },{
     sequelize,
     tableName: 'customers',
     schema: 'public',
